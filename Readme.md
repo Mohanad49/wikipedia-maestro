@@ -20,15 +20,20 @@ Maestro-based mobile automation suite targeting the
 
 ## Project Structure
 
+```
 .maestro/
+│
 ├── subflows/
-│   ├── launch_and_onboard.yaml   # Reusable app launch + onboarding dismissal
-│   └── navigate_to_search.yaml   # Reusable search navigation
+│   ├── launch_and_onboard.yaml     # Reusable app launch + onboarding dismissal
+│   └── navigate_to_search.yaml     # Reusable search navigation
+│
 ├── tests/
-│   ├── search_article.yaml
-│   ├── reading_list.yaml
-│   └── language_switch.yaml
-└── run_all.yaml
+│   ├── search_article.yaml         # Search flow tests
+│   ├── reading_list.yaml           # Reading list flow tests
+│   └── language_switch.yaml        # Language switching flow tests
+│
+└── run_all.yaml                    # Master flow to run all tests
+```
 
 ## Run Locally
 
