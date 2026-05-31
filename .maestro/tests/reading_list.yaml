@@ -1,7 +1,7 @@
 appId: org.wikipedia.alpha
 ---
 - runFlow: ../subflows/launch_and_onboard.yaml
-- runFlow: ../subflows/navigate_to_search
+- runFlow: ../subflows/navigate_to_search.yaml
 
 - tapOn:
     text: "Search Wikipedia"
