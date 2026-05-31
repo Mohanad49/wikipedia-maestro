@@ -1,0 +1,56 @@
+name: Maestro Mobile Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  maestro-tests:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Maestro
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+
+      - name: Download Wikipedia APK
+        run: |
+          APK_URL=$(curl -s https://api.github.com/repos/wikimedia/apps-android-wikipedia/releases/latest \
+            | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          assets = data.get('assets', [])
+          url = next((a['browser_download_url'] for a in assets if 'prod-universal-release' in a['name']), None)
+          print(url)
+          ")
+          echo "Downloading APK from: $APK_URL"
+          curl -L "$APK_URL" -o wikipedia.apk
+
+      - name: Run Maestro tests on Android emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          script: |
+            echo "Installing Wikipedia APK..."
+            adb install wikipedia.apk
+            echo "Waiting for app to be ready..."
+            sleep 10
+            echo "Running Maestro flows..."
+            ~/.maestro/bin/maestro test .maestro/run_all.yaml --format junit --output maestro-results.xml
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: maestro-test-results
+          path: maestro-results.xml
+          retention-days: 30

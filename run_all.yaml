@@ -1,0 +1,4 @@
+flows:
+  - tests/search_article.yaml
+  - tests/reading_list.yaml
+  - tests/language_switch.yaml

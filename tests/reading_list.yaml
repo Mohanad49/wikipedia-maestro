@@ -1,0 +1,21 @@
+appId: org.wikipedia.alpha
+---
+- runFlow: ../subflows/launch_and_onboard.yaml
+- runFlow: ../subflows/navigate_to_search
+
+- tapOn:
+    text: "Search Wikipedia"
+
+- inputText: "Nikola Tesla"
+
+- tapOn: "Nikola Tesla"
+
+- assertVisible:
+    text: "Nikola Tesla"
+
+- tapOn: "Save"
+
+- assertVisible:
+    text: "Saved"
+
+- takeScreenshot: reading_list_saved

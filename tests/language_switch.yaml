@@ -1,0 +1,25 @@
+appId: org.wikipedia
+---
+- runFlow: ../subflows/launch_and_onboard.yaml
+
+- tapOn: "More"
+
+- tapOn:
+    text: "Settings"
+
+- tapOn:
+    text: "Wikipedia languages"
+
+- tapOn: "Add language"
+- tapOn: "Search"
+
+- inputText: "Arabic"
+
+- tapOn:
+    text: "Arabic"
+    index: 1
+
+- assertVisible:
+    text: "العربية"
+
+- takeScreenshot: language_added

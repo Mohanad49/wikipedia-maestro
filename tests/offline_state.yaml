@@ -1,0 +1,4 @@
+appId: org.wikipedia.alpha
+---
+- launchApp:
+    clearState: true

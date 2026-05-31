@@ -1,0 +1,22 @@
+appId: org.wikipedia.alpha
+---
+- runFlow: ../subflows/launch_and_onboard.yaml
+- runFlow: ../subflows/navigate_to_search.yaml
+
+- tapOn:
+    id: "search_card"
+
+- inputText: "Albert Einstein"
+
+- tapOn:
+    text: "Albert Einstein"
+    index: 1
+
+- assertVisible:
+    text: "Albert Einstein"
+
+- assertVisible: "theoretical physicist"
+
+- scroll
+
+- takeScreenshot: search_article_result

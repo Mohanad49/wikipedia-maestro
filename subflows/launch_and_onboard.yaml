@@ -1,0 +1,18 @@
+appId: org.wikipedia.alpha
+---
+
+- launchApp:
+    appId: org.wikipedia.alpha
+    clearState: false
+- tapOn:
+    text: "Skip"
+    optional: true
+- tapOn:
+    text: "Continue"
+    optional: true
+- tapOn:
+    text: "Got it"
+    optional: true
+- tapOn:
+    text: "Accept"
+    optional: true
