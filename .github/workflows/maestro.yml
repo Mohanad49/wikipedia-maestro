@@ -29,7 +29,7 @@ jobs:
       - name: Download Wikipedia APK
         run: |
           curl -L --fail -o wikipedia.apk \
-            "https://github.com/wikimedia/apps-android-wikipedia/releases/download/r%2F2.7.50464-r-2024-05-13/app-prod-universal-release.apk"
+            "https://f-droid.org/repo/org.wikipedia_50590.apk"
           ls -la wikipedia.apk
           file wikipedia.apk || true
           echo "APK size: $(du -h wikipedia.apk | cut -f1)"
