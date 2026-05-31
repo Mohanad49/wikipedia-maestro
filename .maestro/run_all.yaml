@@ -1,6 +1,3 @@
-appId: org.wikipedia.alpha
----
-
 flows:
   - tests/search_article.yaml
   - tests/reading_list.yaml
