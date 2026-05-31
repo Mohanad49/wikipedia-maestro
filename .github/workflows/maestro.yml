@@ -28,9 +28,11 @@ jobs:
 
       - name: Download Wikipedia APK
         run: |
-          curl -L "https://github.com/wikimedia/apps-android-wikipedia/releases/download/r%2F2.7.50464-r-2024-05-13/app-prod-universal-release.apk" \
-            -o wikipedia.apk
-          echo "APK downloaded: $(du -h wikipedia.apk | cut -f1)"
+          curl -L --fail -o wikipedia.apk \
+            "https://github.com/wikimedia/apps-android-wikipedia/releases/download/r%2F2.7.50464-r-2024-05-13/app-prod-universal-release.apk"
+          ls -la wikipedia.apk
+          file wikipedia.apk || true
+          echo "APK size: $(du -h wikipedia.apk | cut -f1)"
 
       - name: Run Maestro tests on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
