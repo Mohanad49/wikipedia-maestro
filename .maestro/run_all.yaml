@@ -1,4 +1,5 @@
-flows:
-  - tests/search_article.yaml
-  - tests/reading_list.yaml
-  - tests/language_switch.yaml
+appId: org.wikipedia.alpha
+---
+- runFlow: tests/search_article.yaml
+- runFlow: tests/reading_list.yaml
+- runFlow: tests/language_switch.yaml
