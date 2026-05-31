@@ -21,16 +21,9 @@ jobs:
 
       - name: Download Wikipedia APK
         run: |
-          APK_URL=$(curl -s https://api.github.com/repos/wikimedia/apps-android-wikipedia/releases/latest \
-            | python3 -c "
-          import sys, json
-          data = json.load(sys.stdin)
-          assets = data.get('assets', [])
-          url = next((a['browser_download_url'] for a in assets if 'prod-universal-release' in a['name']), None)
-          print(url)
-          ")
-          echo "Downloading APK from: $APK_URL"
-          curl -L "$APK_URL" -o wikipedia.apk
+          curl -L "https://github.com/wikimedia/apps-android-wikipedia/releases/download/r%2F2.7.50464-r-2024-05-13/app-prod-universal-release.apk" \
+            -o wikipedia.apk
+          echo "APK downloaded: $(du -h wikipedia.apk | cut -f1)"
 
       - name: Run Maestro tests on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
