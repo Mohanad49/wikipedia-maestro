@@ -2,7 +2,7 @@ appId: org.wikipedia
 ---
 
 - launchApp:
-    appId: org.wikipedia.alpha
+    appId: org.wikipedia
     clearState: false
 - tapOn:
     text: "Skip"
