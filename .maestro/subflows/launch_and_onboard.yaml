@@ -5,14 +5,17 @@ appId: org.wikipedia
     appId: org.wikipedia
     clearState: false
 - tapOn:
+    text: "Forward"
+    optional: true
+- tapOn:
+    text: "Forward"
+    optional: true
+- tapOn:
+    text: "Forward"
+    optional: true
+- tapOn:
     text: "Skip"
     optional: true
 - tapOn:
-    text: "Continue"
-    optional: true
-- tapOn:
-    text: "Got it"
-    optional: true
-- tapOn:
-    text: "Accept"
+    text: "Close"
     optional: true

@@ -12,6 +12,10 @@ appId: org.wikipedia
     text: "Albert Einstein"
     index: 1
 
+- tapOn:
+    text: "Close"
+    optional: true
+
 - assertVisible:
     text: "Albert Einstein"
 
