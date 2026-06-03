@@ -1,4 +1,4 @@
-appId: org.wikipedia.alpha
+appId: org.wikipedia
 ---
 
 - tapOn: "Search"

@@ -1,4 +1,4 @@
-appId: org.wikipedia.alpha
+appId: org.wikipedia
 ---
 - runFlow: ../subflows/launch_and_onboard.yaml
 - runFlow: ../subflows/navigate_to_search.yaml
@@ -8,7 +8,9 @@ appId: org.wikipedia.alpha
 
 - inputText: "Nikola Tesla"
 
-- tapOn: "Nikola Tesla"
+- tapOn:
+    text: "Nikola Tesla"
+    index: 1
 
 - assertVisible:
     text: "Nikola Tesla"

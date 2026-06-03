@@ -1,4 +1,4 @@
-appId: org.wikipedia.alpha
+appId: org.wikipedia
 ---
 - runFlow: tests/search_article.yaml
 - runFlow: tests/reading_list.yaml

@@ -1,4 +1,4 @@
-appId: org.wikipedia.alpha
+appId: org.wikipedia
 ---
 - runFlow: ../subflows/launch_and_onboard.yaml
 - runFlow: ../subflows/navigate_to_search.yaml
