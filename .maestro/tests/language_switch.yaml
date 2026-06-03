@@ -11,13 +11,18 @@ appId: org.wikipedia
     text: "Wikipedia languages"
 
 - tapOn: "Add language"
+
+- waitForAnimationToEnd
+
 - tapOn: "Search"
 
 - inputText: "Arabic"
 
+- waitForAnimationToEnd
+
 - tapOn:
     text: "Arabic"
-    index: 1
+    index: 0
 
 - assertVisible:
     text: "العربية"

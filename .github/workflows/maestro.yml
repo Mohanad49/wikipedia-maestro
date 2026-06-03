@@ -41,13 +41,25 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-snapshot -noaudio -no-boot-anim
           script: |
+            echo "Waiting for network to stabilize..."
+            sleep 30
+
+            echo "Disabling captive portal check..."
+            adb shell settings put global captive_portal_detection_enabled 0
+
             echo "Installing Wikipedia APK..."
             adb install wikipedia.apk
+
             echo "Waiting for app to be ready..."
-            sleep 10
+            sleep 15
+
             echo "Running Maestro flows..."
-            ~/.maestro/bin/maestro test .maestro/run_all.yaml --format junit --output maestro-results.xml
+            ~/.maestro/bin/maestro test .maestro/run_all.yaml \
+              --format junit \
+              --output maestro-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v4

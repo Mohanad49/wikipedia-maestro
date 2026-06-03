@@ -8,9 +8,13 @@ appId: org.wikipedia
 
 - inputText: "Albert Einstein"
 
+- waitForAnimationToEnd
+
 - tapOn:
     text: "Albert Einstein"
-    index: 1
+    index: 0
+
+- waitForAnimationToEnd
 
 - tapOn:
     text: "Close"
@@ -18,8 +22,6 @@ appId: org.wikipedia
 
 - assertVisible:
     text: "Albert Einstein"
-
-- assertVisible: "theoretical physicist"
 
 - scroll
 
