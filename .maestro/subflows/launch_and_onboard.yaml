@@ -3,7 +3,7 @@ appId: org.wikipedia
 
 - launchApp:
     appId: org.wikipedia
-    clearState: false
+    clearState: true
 - tapOn:
     text: "Forward"
     optional: true
@@ -19,3 +19,5 @@ appId: org.wikipedia
 - tapOn:
     text: "Close"
     optional: true
+
+- takeScreenshot: app_state_after_onboarding

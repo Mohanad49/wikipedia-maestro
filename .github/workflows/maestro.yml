@@ -63,5 +63,7 @@ jobs:
         if: always()
         with:
           name: maestro-test-results
-          path: maestro-results.xml
+          path: |
+            maestro-results.xml
+            ~/.maestro/tests/
           retention-days: 30
