@@ -12,7 +12,7 @@ appId: org.wikipedia
 
 - tapOn:
     text: "Albert Einstein"
-    index: 0
+    index: 1
 
 - waitForAnimationToEnd
 

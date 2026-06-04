@@ -22,7 +22,7 @@ appId: org.wikipedia
 
 - tapOn:
     text: "Arabic"
-    index: 0
+    index: 1
 
 - assertVisible:
     text: "العربية"
