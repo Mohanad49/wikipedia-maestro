@@ -20,6 +20,10 @@ appId: org.wikipedia
     text: "Close"
     optional: true
 
+- tapOn:
+    text: "Close"
+    optional: true
+
 - assertVisible:
     text: "Albert Einstein"
 
