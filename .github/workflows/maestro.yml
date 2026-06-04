@@ -56,9 +56,7 @@ jobs:
             sleep 15
 
             echo "Running Maestro flows..."
-            ~/.maestro/bin/maestro test .maestro/run_all.yaml \
-              --format junit \
-              --output maestro-results.xml
+            ~/.maestro/bin/maestro test .maestro/run_all.yaml --format junit --output maestro-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
