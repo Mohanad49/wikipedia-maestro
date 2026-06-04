@@ -16,6 +16,14 @@ appId: org.wikipedia
 
 - waitForAnimationToEnd
 
+- tapOn:
+    text: "Close"
+    optional: true
+
+- tapOn:
+    text: "Close"
+    optional: true
+
 - assertVisible:
     text: "Nikola Tesla"
 
